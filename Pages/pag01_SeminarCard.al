@@ -43,6 +43,11 @@ page 50101 "CSD Seminar Card"
                     ApplicationArea = All;
                     
                 }
+                field("Maximum Participants"; rec."Maximum Participants")
+                {
+                    ApplicationArea = All;
+                    
+                }
                 field(Blocked; rec.Blocked)
                 {
                     ApplicationArea = All;
