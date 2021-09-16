@@ -1,6 +1,8 @@
 table 50101 "CSD Seminar"
 {
     DataClassification = ToBeClassified;
+    LookupPageId = 50101;
+    DrillDownPageId = 50101;
 
     fields
     {
