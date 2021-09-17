@@ -3,6 +3,9 @@ table 50110 "CSD Seminar Reg. Header"
     // CSD1.00 - 2018-01-01 - D. E. Veloper
     //   Chapter 6 - Lab 1-3 & Lab 1-4
     //     - Created new table
+    // Chapter 9 - Lab 1-1
+    //      - Added a new field "No. Printed"
+
     Caption = 'Seminar Registration Header';
 
 
@@ -311,6 +314,11 @@ table 50110 "CSD Seminar Reg. Header"
             Caption = 'Posting No.';
             DataClassification = AccountData;
         }
+        Field(40; "No. Printed"; Integer)
+        {
+            Caption = 'No. Printed';
+            Editable = false;
+        }
     }
 
     keys
@@ -375,6 +383,9 @@ table 50110 "CSD Seminar Reg. Header"
             NoSeriesMgt.InitSeries(SeminarSetup."Seminar Registration Nos.", xRec."No. Series", 0D, "No.", "No. Series");
         end;
         initrecord();
+        if GetFilter("Seminar No.") <> '' then
+            if GetRangeMin("Seminar No.") = GetRangeMax("Seminar No.") then
+                Validate("Seminar No.", GetRangeMin("Seminar No."));
     end;
 
     local procedure InitRecord();
